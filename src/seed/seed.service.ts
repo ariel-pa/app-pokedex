@@ -15,7 +15,7 @@ export class SeedService {
     @InjectModel(Pokemon.name)
     private readonly pokemonModel: Model<Pokemon>,
 
-    //implementacion de patron adaptador creado 
+    //implementacion de patron adaptador creado      
     private readonly http: AxiosAdapter,
     ){}
 
