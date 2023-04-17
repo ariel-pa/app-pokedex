@@ -9,7 +9,7 @@ export class PokemonController {
   constructor(private readonly pokemonService: PokemonService) {}
 
   @Post()
-  //manejo de codigo de errores a lo requertermo 
+  //manejo codigo de errores a lo requerido 
   @HttpCode( HttpStatus.OK)
   create(@Body() createPokemonDto: CreatePokemonDto) {
     return this.pokemonService.create(createPokemonDto);
