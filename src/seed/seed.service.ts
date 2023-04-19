@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import axios, { AxiosInstance } from "axios";
 import { Model } from 'mongoose';
 import { AxiosAdapter } from 'src/common/httpAdapters/axios.adapter';
 import { Pokemon } from 'src/pokemon/entities/pokemon.entity';
@@ -28,7 +27,7 @@ export class SeedService {
 
     const pokemonToInsert: {name: string, no: number}[] = [];
 
-    //Optener no de la url con tipo de dato number
+    //Optener #no de la url con tipo de dato number
     data.results.forEach(({name, url})=> {
 
       const segments = url.split('/');

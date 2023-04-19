@@ -11,7 +11,7 @@ async function bootstrap() {
       whitelist: true,
       forbidNonWhitelisted: true,
 
-      //Convierte en numero
+      //Convierte la query params en numero
       transform: true,
       transformOptions: {
         enableImplicitConversion: true,
@@ -22,8 +22,8 @@ async function bootstrap() {
  //permite agregar el prefijo api/v2 a localhost:3000/ 
   app.setGlobalPrefix('api/v2');  
 
-  await app.listen(3000);
-  console.log('http://localhost:3000');
+  await app.listen(process.env.PORT);
+  console.log(`http://localhost:${process.env.PORT}`);
   
 }
 bootstrap();
