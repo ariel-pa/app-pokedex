@@ -35,7 +35,7 @@ npm install
 npm i -g @nestjs/cli
 ```
 
-4. Levantar la base de datos docker
+4. Levantar la base de datos docker (simple)
 ```
 docker-compose up -d
 ```
@@ -57,3 +57,24 @@ http://localhost:3000/api/v2/seed
 ## Satck Usado
 * MongoDB
 * Nest
+
+## Build de producion
+
+1. Crear el archivo ```.env.prod ```
+2. Llenar las variebles de entorno de produccion
+3. Crear imagen nueva  
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build 
+```
+4. Ejecutar la siguente linea de docker
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up
+```
+
+
+# Notas
+Heroku redeploy sin cambios:
+```
+git commit --allow-empty -m "Trigger Heroku deploy"
+git push heroku <master/main>
+```
